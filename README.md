@@ -13,7 +13,7 @@ Antes de empezar, asegúrate de tener instalados los siguientes programas y herr
 
 ## Configuración del Proyecto
 ### Clonar el Repositorio
-```sh
+```
 git clone https://github.com/ikariano/RetoTecnicoPromart.git
 ```
 ### Configurar la Cadena de Conexión
@@ -27,14 +27,31 @@ Asegúrate de configurar la cadena de conexión a tu base de datos SQL Server en
 ```
 ### Restaurar Paquetes de NuGet
 Ejecuta el siguiente comando en la raíz del proyecto para restaurar los paquetes necesarios:
-```sh
+```
 dotnet restore
 ```
 ### Aplicar Migraciones de la Base de Datos
 Ejecuta los siguientes comandos en la consola del Administrador de Paquetes de NuGet para crear y aplicar la migración inicial:
-```sh
+```
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
 ## Endpoints de la API
+### Crear Cliente
+| EndPoint    | Cuerpo       |
+|:------------ |:------------:|
+|```POST /RetoTecnico/CrearCliente```|```{"Nombre": "Juan",  "Apellidos": "Pérez",  "FechaNacimiento": "2024-07-21"}```|
+### Listar Clientes
+| EndPoint    | Cuerpo       |
+|:------------ |:------------:|
+|```GET /RetoTecnico/ListarClientes```||
+### Obtener cliente específico por IdCliente
+| EndPoint    | Cuerpo       |
+|:------------ |:------------:|
+|```GET /RetoTecnico/ObtenerCliente/{IdCliente}```||
+### Obtener los 3 clientes con mayor edad.
+| EndPoint    | Cuerpo       |
+|:------------ |:------------:|
+|```GET /RetoTecnico/ObtenerClientesMayorEdad```||
+
