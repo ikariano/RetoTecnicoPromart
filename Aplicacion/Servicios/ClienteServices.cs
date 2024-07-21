@@ -28,7 +28,7 @@ namespace Aplicacion.Servicios
 
         public async Task<IEnumerable<ClienteDTO>> ObtenerClienteAsync(int IdCliente)
         {
-            return await _clienteRepository.ObtenerClienteAsync();
+            return await _clienteRepository.ObtenerClienteAsync(IdCliente);
         }
 
         public async Task<IEnumerable<ClienteDTO>> ObtenerClientesMayorEdadAsync()

@@ -9,7 +9,7 @@ var conexionSQL = builder.Configuration.GetConnectionString("Conexion");
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AplicacionContext>(options => {
-    options.UseSqlServer(conexionSQL);
+    options.UseSqlServer(conexionSQL, b => b.MigrationsAssembly("ClientesAPI"));
 });
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IClienteServices, ClienteServices>();

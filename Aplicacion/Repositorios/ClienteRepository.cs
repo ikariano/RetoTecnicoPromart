@@ -79,11 +79,12 @@ namespace Aplicacion.Repositorios
                     FechaNacimiento = cliente.FechaNacimiento,
                     Edad = CalcularEdad(cliente.FechaNacimiento)
                 }
-            ).OrderByDescending(cliente => cliente.Edad)
-             .Take(3)
-             .ToListAsync();
+            ).ToListAsync();
 
-            return clientesMayorEdad ?? new List<ClienteDTO>();
+
+
+            return clientesMayorEdad.OrderByDescending(c => c.Edad).Take(3).ToList()
+              ?? new List<ClienteDTO>();
         }
 
         static int CalcularEdad(DateTime FechaNacimiento)

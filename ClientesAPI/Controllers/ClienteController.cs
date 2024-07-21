@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Dominio.Entidades;
+using Aplicacion.Servicios;
+using Dominio.Entidades.DTO;
 
 namespace ClientesAPI.Controllers
 {
@@ -8,9 +10,11 @@ namespace ClientesAPI.Controllers
     public class ClienteController : Controller
     {
         private readonly ILogger<Cliente> logger;
-        public ClienteController(ILogger<Cliente> logger)
+        private readonly IClienteServices _clienteServices;
+        public ClienteController(ILogger<Cliente> logger, IClienteServices clienteServices)
         {
             this.logger = logger;
+            _clienteServices = clienteServices;
         }
 
         [HttpPost]
@@ -20,21 +24,21 @@ namespace ClientesAPI.Controllers
         }
 
         [HttpGet("/ListarClientes")]
-        public IEnumerable<Cliente> ListarClientes()
+        public async Task<IEnumerable<ClienteDTO>> ListarClientes()
         {
-            return new List<Cliente>();
+            return await _clienteServices.ListarClientesAsync();
         }
 
         [HttpGet("/ObtenerCliente/{IdCliente}")]
-        public IEnumerable<Cliente> ObtenerCliente(int IdCliente)
+        public async Task<IEnumerable<ClienteDTO>> ObtenerCliente(int IdCliente)
         {
-            return new List<Cliente>();
+            return await _clienteServices.ObtenerClienteAsync(IdCliente);
         }
 
         [HttpGet("/ObtenerClientesMayorEdad")]
-        public IEnumerable<Cliente> ObtenerClientesMayorEdad()
+        public async Task<IEnumerable<ClienteDTO>> ObtenerClientesMayorEdad()
         {
-            return new List<Cliente>();
+            return await _clienteServices.ObtenerClientesMayorEdadAsync();
         }
 
     }
