@@ -17,10 +17,10 @@ namespace ClientesAPI.Controllers
             _clienteServices = clienteServices;
         }
 
-        [HttpPost]
-        public IActionResult CrearCliente(Cliente cliente)
+        [HttpPost("/CrearCliente")]
+        public async Task<IActionResult> CrearCliente([FromBody] ClienteCrearDTO cliente)
         {
-            return Ok(cliente);
+            return Ok(await _clienteServices.CrearClienteAsync(cliente));
         }
 
         [HttpGet("/ListarClientes")]

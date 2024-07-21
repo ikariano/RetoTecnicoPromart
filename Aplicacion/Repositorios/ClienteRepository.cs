@@ -19,8 +19,15 @@ namespace Aplicacion.Repositorios
             _context = context;
         }
 
-        public async Task<Cliente> CrearClienteAsync(Cliente cliente)
+        public async Task<Cliente> CrearClienteAsync(ClienteCrearDTO clienteInsert)
         {
+            Cliente cliente = new Cliente()
+            {
+                Nombre = clienteInsert.Nombre,
+                Apellidos = clienteInsert.Apellidos,
+                FechaNacimiento = clienteInsert.FechaNacimiento
+            };
+
             _context.Clientes.Add(cliente);
             await _context.SaveChangesAsync();
             return cliente;

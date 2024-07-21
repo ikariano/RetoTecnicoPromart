@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Dominio.Entidades.DTO
 {
-    public class ClienteDTO
+    public class ClienteCrearDTO
     {
-        public int idCliente { get; set; }
+        required
         public string Nombre { get; set; }
+        required
         public string Apellidos { get; set; }
+        required
         public DateTime FechaNacimiento { get; set; }
-        public int Edad { get; set; }
     }
 }

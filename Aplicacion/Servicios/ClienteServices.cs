@@ -16,7 +16,7 @@ namespace Aplicacion.Servicios
         {
             _clienteRepository = clienteRepository;
         }
-        public async Task<Cliente> CrearClienteAsync(Cliente cliente)
+        public async Task<Cliente> CrearClienteAsync(ClienteCrearDTO cliente)
         {
             return await _clienteRepository.CrearClienteAsync(cliente);
         }

@@ -10,7 +10,7 @@ namespace Aplicacion.Servicios
 {
     public interface IClienteServices
     {
-        Task<Cliente> CrearClienteAsync(Cliente cliente);
+        Task<Cliente> CrearClienteAsync(ClienteCrearDTO cliente);
         Task<IEnumerable<ClienteDTO>> ListarClientesAsync();
         Task<IEnumerable<ClienteDTO>> ObtenerClienteAsync(int IdCliente);
         Task<IEnumerable<ClienteDTO>> ObtenerClientesMayorEdadAsync();
