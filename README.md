@@ -38,20 +38,20 @@ dotnet ef database update
 ```
 
 ## Endpoints de la API
-### Crear Cliente
-| EndPoint    | Cuerpo       |
-|:------------ |:------------:|
-|```POST /RetoTecnico/CrearCliente```|```{"Nombre": "Juan",  "Apellidos": "Pérez",  "FechaNacimiento": "2024-07-21"}```|
-### Listar Clientes
-| EndPoint    | Cuerpo       |
-|:------------ |:------------:|
-|```GET /RetoTecnico/ListarClientes```||
-### Obtener cliente específico por IdCliente
-| EndPoint    | Cuerpo       |
-|:------------ |:------------:|
-|```GET /RetoTecnico/ObtenerCliente/{IdCliente}```||
-### Obtener los 3 clientes con mayor edad.
-| EndPoint    | Cuerpo       |
-|:------------ |:------------:|
-|```GET /RetoTecnico/ObtenerClientesMayorEdad```||
+### - Crear Cliente
+| Tipo    | EndPoint    | Cuerpo       |
+|:------------ |:------------ |:------------:|
+|```POST```|```/RetoTecnico/CrearCliente```|```{"Nombre": "Juan",  "Apellidos": "Pérez",  "FechaNacimiento": "2024-07-21"}```|
+### - Listar Clientes
+| Tipo    | EndPoint    | Cuerpo       |
+|:------------ |:------------ |:------------:|
+|```GET```|```/RetoTecnico/ListarClientes```|No necesita|
+### - Obtener cliente específico por IdCliente
+| Tipo    | EndPoint    | Cuerpo       |
+|:------------ |:------------ |:------------:|
+|```GET```|```/RetoTecnico/ObtenerCliente/{IdCliente}```|No necesita|
+### - Obtener los 3 clientes con mayor edad.
+| Tipo    | EndPoint    | Cuerpo       |
+|:------------ |:------------ |:------------:|
+|```GET```|```/RetoTecnico/ObtenerClientesMayorEdad```|No necesita|
 
