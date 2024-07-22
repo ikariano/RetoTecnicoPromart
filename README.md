@@ -33,8 +33,8 @@ dotnet restore
 ### Aplicar Migraciones de la Base de Datos
 Ejecuta los siguientes comandos en la consola del Administrador de Paquetes de NuGet para crear y aplicar la migración inicial:
 ```
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+Add-Migration v1_CrearTablas
+Update-Database
 ```
 
 ## Endpoints de la API
